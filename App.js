@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SignIn">
         <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}} />
-        <Stack.Screen name="CreateAccount" component={CreateAccount} />
+        <Stack.Screen name="CreateAccount" component={CreateAccount}  options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
