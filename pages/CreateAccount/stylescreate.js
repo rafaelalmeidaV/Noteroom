@@ -2,10 +2,6 @@ import styled from "styled-components/native";
 
 
 export const Container = styled.View`
-    width: 100%;
-    height: 100%;
-    /* align-items: center; */
-    justify-content: flex-end;
     background-color: #60169A;
 `;
 
@@ -13,10 +9,10 @@ export const Wrapper = styled.View`
     padding-left: 6%;
     padding-right: 6%;
     padding-bottom: 15%;
-    width: 100%;  
     background-color: white;    
     border-top-left-radius: 20px ;
     border-top-right-radius: 20px ;
+
 `;
 
 export const Emailzone = styled.View`   
@@ -64,4 +60,11 @@ export const TextEntrar = styled.Text`
    font-size: 16px;   
    color: #60169A;
    font-weight: bold;   
+`;
+export const Noteroom = styled.Text`
+      
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      font-family: "Roboto";
 `;
