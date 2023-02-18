@@ -77,7 +77,7 @@ export const TextEsqueci = styled.Text`
 `;
 export const TextNewAccount = styled.Text`
    font-size: 14px;   
-   margin-left: 6%;
+   text-align: center;
    color: #60169A;   
 `;
 export const TextCadastra = styled.Text`

@@ -1,6 +1,6 @@
 import { Text, Button, View, TextInput, SafeAreaView, Alert } from "react-native";
 import { NavigationAction } from "@react-navigation/native";
-import { Noteroom, StyledButton, Wrapper, ButtonWrapper, Container, TextTitle, Emailzone, ButtonContainer, CheckBoxContainer, TextCheck, TextEsqueci, TextNewAccount, TextCadastra, Containerbar1, Containerball, Containerbar2, ContainerOU, Textball ,WrapperTxt, StyledTextInput } from "./styles";
+import { Noteroom, StyledButton, Wrapper, ButtonWrapper, Container, TextTitle, Emailzone,ButtonContainer, CheckBoxContainer, TextCheck, TextEsqueci, TextNewAccount, TextCadastra, Containerbar1, Containerball, Containerbar2, ContainerOU, Textball ,WrapperTxt, StyledTextInput } from "./styles";
 import SuperButton from "../../components/Button";
 import { useState } from "react";
 import CreateAccount from "../CreateAccount";
@@ -72,8 +72,6 @@ export default function SignIn({ navigation }) {
 
                 <ButtonContainer>
                     <SuperButton
-
-                        
                         text="Entrar"
                         color="#60169A"
                     />

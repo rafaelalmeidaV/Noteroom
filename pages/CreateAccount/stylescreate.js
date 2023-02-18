@@ -38,8 +38,6 @@ export const Emailzone = styled.View`
 
 export const StyledTextInput = styled.TextInput.attrs({
     placeholderTextColor: "white",
-   
-
 })`
  font-size: 12px;
 `;
@@ -62,4 +60,24 @@ export const TextCheck = styled.Text`
    margin-top: 8px;
    
   
+`;
+export const ButtonContainer = styled.View`
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    
+`;
+export const TextTenhoConta = styled.Text`
+   font-size: 14px;     
+   color: #60169A;   
+   
+    
+`;
+export const TextEntrar = styled.Text`
+   font-size: 16px;   
+   color: #60169A;
+   font-weight: bold;
+   
 `;
