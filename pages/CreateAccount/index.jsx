@@ -10,17 +10,12 @@ export default function CreateAccount({ navigation }) {
     function handleNavigationSignIn(){
         navigation.navigate('SignIn')
     }
-
-
     const [name, onChangename] = useState('');
     const [telefone, onChangetelefone] = useState('');
     const [email, onChangeemail] = useState('');
     const [senha, onChangesenha] = useState('');
-
     const [checked, setChecked] = useState(false);
-
     return (
-
         <Container>
             <SafeAreaView style={{ marginTop: "7%", paddingLeft: "6%", paddingRight: "6%", paddingBottom: "10%" }}>
                 <Emailzone>
@@ -28,8 +23,6 @@ export default function CreateAccount({ navigation }) {
                         onChangeText={onChangename}
                         value={name}
                         placeholder="Seu nome"
-
-
                     />
                 </Emailzone>
                 <Emailzone>
@@ -38,7 +31,6 @@ export default function CreateAccount({ navigation }) {
                         value={telefone}
                         placeholder="Telefone"
                         secureTextEntry
-
                     />
                 </Emailzone>
                 <Emailzone>
@@ -47,7 +39,6 @@ export default function CreateAccount({ navigation }) {
                         value={email}
                         placeholder="Email"
                         secureTextEntry
-
                     />
                 </Emailzone>
                 <Emailzone>
@@ -56,7 +47,6 @@ export default function CreateAccount({ navigation }) {
                         value={senha}
                         placeholder="Senha"
                         secureTextEntry
-
                     />
                 </Emailzone>
             </SafeAreaView>
@@ -104,11 +94,7 @@ export default function CreateAccount({ navigation }) {
                 <TextTenhoConta>
                     Já tem uma conta?<TextEntrar onPress={handleNavigationSignIn}> Entrar</TextEntrar>
                 </TextTenhoConta>
-
             </Wrapper>
         </Container>
-
     )
-
-
 }
