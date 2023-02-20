@@ -1,9 +1,9 @@
 import { TextInput, SafeAreaView, KeyboardAvoidingView, ScrollView } from "react-native";
 import { Noteroom, TextEntrar, TextTenhoConta, ButtonContainer, TextCheck, Wrapper, Container, Emailzone, StyledTextInput, CheckBoxContainer, TextFuncao } from "./stylescreate";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "react-native-paper";
 import SuperButton from "../../components/Button";
-import UserCRUD, { User } from "../../services/database/user";
+import Database, { User } from "../../services/database/user";
 
 
 export default function CreateAccount({ navigation }) {
@@ -16,15 +16,22 @@ export default function CreateAccount({ navigation }) {
     const [checked2, setChecked2] = useState(false);
     const [checked3, setChecked3] = useState(false);
 
-    const bd = new UserCRUD();
+    const dbRef = useRef(null);
+
+    useEffect(() => {
+        dbRef.current = new Database();
+    }, []);
 
     async function createUser() {
-        const user = new User(name, telefone, email, senha);
-        await bd.create(user)
-        //printar bd
-        await bd.readAll().then((data) => {
-            console.log(data);
-        })
+        console.log("createUser");
+        if (dbRef.current) {
+            const user = new User(name, telefone, email, senha);
+            await dbRef.addUser(user)
+            //printar bd
+            await dbRef.getUsers().then((data) => {
+                console.log(data);
+            })
+        }
     }
 
     function handleNavigationSignIn() {
