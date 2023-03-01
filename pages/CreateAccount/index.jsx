@@ -1,9 +1,10 @@
-import { TextInput, SafeAreaView, KeyboardAvoidingView, ScrollView } from "react-native";
+import { TextInput, SafeAreaView, KeyboardAvoidingView, ScrollView, Alert } from "react-native";
 import { Noteroom, TextEntrar, TextTenhoConta, ButtonContainer, TextCheck, Wrapper, Container, Emailzone, StyledTextInput, CheckBoxContainer, TextFuncao } from "./stylescreate";
 import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "react-native-paper";
 import SuperButton from "../../components/Button";
 import Database, { User } from "../../services/database/user";
+
 
 
 export default function CreateAccount({ navigation }) {
@@ -16,22 +17,27 @@ export default function CreateAccount({ navigation }) {
     const [checked2, setChecked2] = useState(false);
     const [checked3, setChecked3] = useState(false);
 
-    const dbRef = useRef(null);
+    const db = new Database();
 
-    useEffect(() => {
-        dbRef.current = new Database();
-    }, []);
+
 
     async function createUser() {
-        console.log("createUser");
-        if (dbRef.current) {
-            const user = new User(name, telefone, email, senha);
-            await dbRef.addUser(user)
-            //printar bd
-            await dbRef.getUsers().then((data) => {
-                console.log(data);
-            })
+        console.log("Cadastrando usuário")
+
+        if(name === "" || telefone === "" || email === "" || senha === ""){ 
+            Alert.alert("Erro", "Preencha todos os campos")
+            return
         }
+
+        try {
+            await db.postUser({ name, telefone, email, senha })
+            navigation.navigate('SignIn')
+            Alert.alert("Sucesso", "Usuário cadastrado com sucesso")
+        } catch (error) {
+            Alert.alert("Erro", "Erro ao cadastrar usuário")
+            console.log(error)
+        }
+
     }
 
     function handleNavigationSignIn() {
@@ -48,7 +54,8 @@ export default function CreateAccount({ navigation }) {
                     <Noteroom>NOTEROOM</Noteroom>
                     <SafeAreaView style={{ marginTop: "7%", paddingLeft: "6%", paddingRight: "6%", paddingBottom: "10%" }}>
                         <Emailzone>
-                            <StyledTextInput
+                            <StyledTextInput 
+                                style={{ color: "white" }}
                                 onChangeText={onChangename}
                                 value={name}
                                 placeholder="Seu nome"
@@ -56,6 +63,7 @@ export default function CreateAccount({ navigation }) {
                         </Emailzone>
                         <Emailzone>
                             <StyledTextInput
+                                style={{ color: "white" }}
                                 onChangeText={onChangetelefone}
                                 value={telefone}
                                 placeholder="Telefone"
@@ -64,6 +72,7 @@ export default function CreateAccount({ navigation }) {
                         </Emailzone>
                         <Emailzone>
                             <StyledTextInput
+                                style={{ color: "white" }}
                                 onChangeText={onChangeemail}
                                 value={email}
                                 placeholder="Email"

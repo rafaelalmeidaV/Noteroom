@@ -59,7 +59,7 @@ export const ButtonContainer = styled.View`
 export const CheckBoxContainer = styled.View`
     padding-top: 10%;
     flex-Direction: row;
-    margin-Bottom: 20;
+    margin-Bottom: 20px;
   
 `;
 export const TextCheck = styled.Text`

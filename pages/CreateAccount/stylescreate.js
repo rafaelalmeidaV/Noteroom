@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     background-color: #60169A;
+    
 `;
 
 export const Wrapper = styled.View`    
@@ -12,6 +13,7 @@ export const Wrapper = styled.View`
     background-color: white;    
     border-top-left-radius: 20px ;
     border-top-right-radius: 20px ;
+    
 
 `;
 
@@ -62,7 +64,7 @@ export const TextEntrar = styled.Text`
    font-weight: bold;   
 `;
 export const Noteroom = styled.Text`
-      
+      margin-top: 20%;
       color: white;
       font-size: 24px;
       text-align: center;

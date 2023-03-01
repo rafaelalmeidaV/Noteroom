@@ -12,10 +12,13 @@ export default function SignIn({ navigation }) {
     function handleNavigationCreateAccount() {
         // console.log({ email, password })
         // if (email === "rafael.4avv@gmail.com" && password === "rafael") {
-            navigation.navigate('CreateAccount')
+        
         // } else {
         //     Alert.alert("ERRO", "Senha ou Email incorreto")
         // }
+    }
+    function handleNavigationCreateAccount() {
+        navigation.navigate('CreateAccount')
     }
 
     const [email, onChangeEmail] = useState('');
@@ -25,7 +28,7 @@ export default function SignIn({ navigation }) {
 
     return (
         <Container>
-            <WrapperTxt  >
+            <WrapperTxt >
             <Noteroom>NOTEROOM</Noteroom>
             </WrapperTxt>            
             <Wrapper>
@@ -76,8 +79,8 @@ export default function SignIn({ navigation }) {
                         color="#60169A"
                     />
                 </ButtonContainer>
-                <TextNewAccount onPress={handleNavigationCreateAccount}>
-                    Ainda nao possui uma conta? <TextCadastra>Cadastre-se</TextCadastra>
+                <TextNewAccount >
+                    Ainda nao possui uma conta? <TextCadastra onPress={handleNavigationCreateAccount}>Cadastre-se</TextCadastra>
                 </TextNewAccount>
                 {/* <ContainerOU>
                     <Containerbar1 />
