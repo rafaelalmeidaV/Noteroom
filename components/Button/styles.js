@@ -1,5 +1,7 @@
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+import Home from "../../pages/Home";
+
 
 export const ButtonWrapper = styled.TouchableOpacity`
     background-color: ${props => props.color ? props.color : "blue"};

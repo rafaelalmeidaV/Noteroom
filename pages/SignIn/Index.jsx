@@ -8,17 +8,13 @@ import { Checkbox } from "react-native-paper";
 
 
 
-export default function SignIn({ navigation }) {
-    function handleNavigationCreateAccount() {
-        // console.log({ email, password })
-        // if (email === "rafael.4avv@gmail.com" && password === "rafael") {
-        
-        // } else {
-        //     Alert.alert("ERRO", "Senha ou Email incorreto")
-        // }
-    }
+export default function SignIn({ navigation }) { 
+    
     function handleNavigationCreateAccount() {
         navigation.navigate('CreateAccount')
+    }
+    function handleNavigationHome() {
+        navigation.navigate('Home')
     }
 
     const [email, onChangeEmail] = useState('');
@@ -75,6 +71,7 @@ export default function SignIn({ navigation }) {
 
                 <ButtonContainer>
                     <SuperButton
+                        onPress={handleNavigationHome}
                         text="Entrar"
                         color="#60169A"
                     />
