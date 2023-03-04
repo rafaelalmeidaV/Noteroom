@@ -11,7 +11,7 @@ export default function CreateAccount({ navigation }) {
     const [name, onChangename] = useState('');
     const [telefone, onChangetelefone] = useState('');
     const [email, onChangeemail] = useState('');
-    const [senha, onChangesenha] = useState('');
+    const [password, onChangepassword] = useState('');
 
     const [checked, setChecked] = useState(false);
     const [checked2, setChecked2] = useState(false);
@@ -24,13 +24,13 @@ export default function CreateAccount({ navigation }) {
     async function createUser() {
         console.log("Cadastrando usuário")
 
-        if(name === "" || telefone === "" || email === "" || senha === ""){ 
+        if(name === "" || telefone === "" || email === "" || password === ""){ 
             Alert.alert("Erro", "Preencha todos os campos")
             return
         }
 
         try {
-            await db.postUser({ name, telefone, email, senha })
+            await db.postUser({ name, telefone, email, password })
             navigation.navigate('SignIn')
             Alert.alert("Sucesso", "Usuário cadastrado com sucesso")
         } catch (error) {
@@ -81,8 +81,9 @@ export default function CreateAccount({ navigation }) {
                         </Emailzone>
                         <Emailzone>
                             <StyledTextInput
-                                onChangeText={onChangesenha}
-                                value={senha}
+                                style={{ color: "white" }}
+                                onChangeText={onChangepassword}
+                                value={password}
                                 placeholder="Senha"
                                 secureTextEntry
                             />

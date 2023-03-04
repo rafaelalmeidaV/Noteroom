@@ -1,15 +1,16 @@
 import { Text, Button, View, TextInput, SafeAreaView, Alert } from "react-native";
 import { NavigationAction } from "@react-navigation/native";
-import { Noteroom, StyledButton, Wrapper, ButtonWrapper, Container, TextTitle, Emailzone,ButtonContainer, CheckBoxContainer, TextCheck, TextEsqueci, TextNewAccount, TextCadastra, Containerbar1, Containerball, Containerbar2, ContainerOU, Textball ,WrapperTxt, StyledTextInput } from "./styles";
+import { Noteroom, StyledButton, Wrapper, ButtonWrapper, Container, TextTitle, Emailzone, ButtonContainer, CheckBoxContainer, TextCheck, TextEsqueci, TextNewAccount, TextCadastra, Containerbar1, Containerball, Containerbar2, ContainerOU, Textball, WrapperTxt, StyledTextInput } from "./styles";
 import SuperButton from "../../components/Button";
 import { useState } from "react";
 import CreateAccount from "../CreateAccount";
 import { Checkbox } from "react-native-paper";
+import axios from 'axios';
 
 
 
-export default function SignIn({ navigation }) { 
-    
+export default function SignIn({ navigation }) {
+
     function handleNavigationCreateAccount() {
         navigation.navigate('CreateAccount')
     }
@@ -22,20 +23,37 @@ export default function SignIn({ navigation }) {
 
     const [checked, setChecked] = useState(false);
 
+
+    async function signInWithEmailAndPassword() {
+        try {
+           
+            const response = await axios.get(`https://note-room-default-rtdb.firebaseio.com/users.json?equalTo="${email}"`)
+
+            
+            const data = response.data
+            
+            console.log(data)
+            
+        } catch (error) {
+            Alert.alert("Erro", "Erro ao logar")
+            console.log(error)
+        }
+    }
+
     return (
         <Container>
             <WrapperTxt >
-            <Noteroom>NOTEROOM</Noteroom>
-            </WrapperTxt>            
+                <Noteroom>NOTEROOM</Noteroom>
+            </WrapperTxt>
             <Wrapper>
-                
+
                 <SafeAreaView style={{ marginTop: "7%" }}>
                     <Emailzone>
                         <StyledTextInput
                             onChangeText={onChangeEmail}
                             value={email}
                             placeholder="Email"
-                            
+
                         />
                     </Emailzone>
                     <Emailzone>
@@ -44,11 +62,11 @@ export default function SignIn({ navigation }) {
                             value={password}
                             placeholder="Senha"
                             secureTextEntry
-                            
+
                         />
                     </Emailzone>
 
-                    
+
 
                 </SafeAreaView>
 
@@ -71,7 +89,7 @@ export default function SignIn({ navigation }) {
 
                 <ButtonContainer>
                     <SuperButton
-                        onPress={handleNavigationHome}
+                        onPress={signInWithEmailAndPassword}
                         text="Entrar"
                         color="#60169A"
                     />
