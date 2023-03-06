@@ -1,5 +1,10 @@
-import { View } from 'react-native'
-import { WrapperTxt, Bar, Container, Wrapper, Noteroom, ContainerBook, ContainerBoletim, ContainerAulas, ContainerData } from './stylehome'
+
+import ContainerBook from '../../components/ContainerBook'
+import { WrapperTxt, Bar, Container, Wrapper, Noteroom } from './styles'
+import image1 from '../../assets/img/caderno.png'
+import image2 from '../../assets/img/boletim.png'
+import image3 from '../../assets/img/video.png'
+import image4 from '../../assets/img/calendario.png'
 
 
 export default function Home({ navigation }) {
@@ -11,31 +16,23 @@ export default function Home({ navigation }) {
             </WrapperTxt>
 
             <Wrapper>
-                <ContainerBook>
+                <ContainerBook urlImage={image1} title="MATÉRIAS E ATIVIDADES" text="" />
+                <ContainerBook urlImage={image2} title="BOLETIM" text="" />
+                <ContainerBook urlImage={image3} title="VIDEO AULAS" text="" />
+                <ContainerBook urlImage={image4} title="CALENDARIO" text="" />
 
-                </ContainerBook>
-
-                <ContainerBoletim>
-
-                </ContainerBoletim>
-
-                <ContainerAulas>
-
-                </ContainerAulas>
-
-                <ContainerData>
-
-                </ContainerData>
+                
+                
 
                 <Bar></Bar>
 
             </Wrapper>
         </Container>
-        
+
     )
 
 
-    
+
 
 
 
