@@ -93,3 +93,6 @@ export const TextContent = styled.Text`
       padding-bottom: 5%;
       padding-right: 5%;       
 `;
+export const Wrapper2 = styled.View`      
+      flex-direction: column;     
+`;

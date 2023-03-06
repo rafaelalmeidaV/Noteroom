@@ -1,6 +1,6 @@
 import { View, Image } from 'react-native'
 import { Text, } from 'react-native-paper'
-import { WrapperBook, TextContent, ImgIcon, WrapperTxtTitle, TextTitle, WrapperTxt, Bar, Container, Wrapper, Noteroom, ContainerBoletim, ContainerAulas, ContainerData } from './styles'
+import { Wrapper2, WrapperBook, TextContent, ImgIcon, WrapperTxtTitle, TextTitle, WrapperTxt, Bar, Container, Wrapper, Noteroom, ContainerBoletim, ContainerAulas, ContainerData } from './styles'
 
 
 export default function ContainerBook({ urlImage, title, text }) {
@@ -10,9 +10,12 @@ export default function ContainerBook({ urlImage, title, text }) {
             <ImgIcon>
                 <Image source={urlImage} style={{ width: 100, height: 100 }} />
             </ImgIcon>
-            <TextTitle>{title}
+
+            <Wrapper2>
+                <TextTitle>{title}</TextTitle>
                 <TextContent>{text}</TextContent>
-            </TextTitle>
+            </Wrapper2>
+
         </WrapperBook>
 
 
