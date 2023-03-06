@@ -29,6 +29,21 @@ export default function CreateAccount({ navigation }) {
             return
         }
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(email)){
+            Alert.alert("Erro", "Email inválido")
+            return
+        }
+        
+        if(password.length < 6){
+            Alert.alert("Erro", "Senha deve ter no mínimo 6 caracteres")
+            return
+        } 
+        if(telefone.length < 11){
+            Alert.alert("Erro", "Telefone inválido")
+            return
+        }
+
         try {
             await db.postUser({ name, telefone, email, password })
             navigation.navigate('SignIn')
@@ -65,9 +80,10 @@ export default function CreateAccount({ navigation }) {
                             <StyledTextInput
                                 style={{ color: "white" }}
                                 onChangeText={onChangetelefone}
-                                value={telefone}
+                                value={telefone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")}
+                                maxLength={15}
                                 placeholder="Telefone"
-
+                                keyboardType="numeric"
                             />
                         </Emailzone>
                         <Emailzone>
@@ -76,6 +92,7 @@ export default function CreateAccount({ navigation }) {
                                 onChangeText={onChangeemail}
                                 value={email}
                                 placeholder="Email"
+                                
 
                             />
                         </Emailzone>

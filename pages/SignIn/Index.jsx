@@ -24,22 +24,33 @@ export default function SignIn({ navigation }) {
     const [checked, setChecked] = useState(false);
 
 
-    async function signInWithEmailAndPassword() {
-        try {
-           
-            const response = await axios.get(`https://note-room-default-rtdb.firebaseio.com/users.json?equalTo="${email}"`)
+    // define o URL da rota do Firebase Realtime Database
 
-            
+    async function handleSignIn() {
+        const url = "https://note-room-default-rtdb.firebaseio.com/users.json";
+        // faz uma requisição GET para a rota do Firebase Realtime Database
+        try {
+
+            const response = await axios.get(`${url}`)
+            console.log(response.data)
             const data = response.data
-            
-            console.log(data)
-            
+
+            const filteredUsers = Object.values(data).filter(user => user.email === email);
+
+
+            const user = filteredUsers.find(user => user.password === password);
+
+
+            if (user) {
+                console.log("Usuário encontrado.");
+                handleNavigationHome()
+            } else {
+                console.log("Credenciais inválidas.");
+            }
         } catch (error) {
-            Alert.alert("Erro", "Erro ao logar")
-            console.log(error)
+            console.error(error);
         }
     }
-
     return (
         <Container>
             <WrapperTxt >
@@ -89,7 +100,7 @@ export default function SignIn({ navigation }) {
 
                 <ButtonContainer>
                     <SuperButton
-                        onPress={signInWithEmailAndPassword}
+                        onPress={handleSignIn}
                         text="Entrar"
                         color="#60169A"
                     />
