@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
             </WrapperTxt>
 
             <Wrapper>
-                <ContainerBook urlImage={image1} title="MATÉRIAS E ATIVIDADES" text="" />
+                <ContainerBook urlImage={image1} title="MATÉRIAS E ATIVIDADES" text="aaaaaaaa" />
                 <ContainerBook urlImage={image2} title="BOLETIM" text="" />
                 <ContainerBook urlImage={image3} title="VIDEO AULAS" text="" />
                 <ContainerBook urlImage={image4} title="CALENDARIO" text="" />
