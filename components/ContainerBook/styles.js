@@ -92,6 +92,6 @@ export const TextContent = styled.Text`
        
 `;
 export const Wrapper2 = styled.View`      
-      flex   : ;
+      
        
 `;
