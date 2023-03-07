@@ -1,4 +1,5 @@
 import { View, Text } from "react-native";
+import { Container, Wrapper } from "./style";
 
 
 
@@ -6,8 +7,22 @@ import { View, Text } from "react-native";
 export default function Book({ navigation }) {   
     
     return (       
-        <View>
-        <Text>aaaaaaaaaaaaaaaaaaaaaaaaaa</Text>
-        </View>
+        <Container> 
+            
+
+                        
+
+            <Wrapper >
+
+
+
+
+
+                
+                <Bar></Bar>
+            </Wrapper>
+        </Container>
+        
+
     );
 }
