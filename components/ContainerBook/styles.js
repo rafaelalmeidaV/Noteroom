@@ -21,13 +21,14 @@ export const WrapperTxt = styled.View`
       padding-bottom: 5%;
       justify-content: flex-end;
       align-items: center;
+     
 `;
 export const Noteroom = styled.Text`      
       color: white;
       font-size: 22px;  
 `;
-export const WrapperBook = styled.View`
-      margin-top: 12%;
+export const WrapperBook = styled.TouchableOpacity`
+      margin-top: 11%;
       background-color: #DAB6FF;
       width: 84%;
       height: 120px;
@@ -76,9 +77,8 @@ export const TextTitle = styled.Text`
       color: #60169A;
       font-size: 16px;  
       font-weight: bold;  
-      flex: 1;  
-      padding-top: 8%;
-      padding-bottom: 5%;
+      margin-top : 10% ;
+           
       padding-right: 5%; 
 `;
 export const ImgIcon = styled.View`      
@@ -88,11 +88,10 @@ export const ImgIcon = styled.View`
 `;
 export const TextContent = styled.Text`      
       color: gray;
-      font-size: 13px;  
-      flex: 1;  
-      padding-bottom: 5%;
-      padding-right: 5%;       
+      font-size: 13px; 
+       
 `;
 export const Wrapper2 = styled.View`      
-      flex-direction: column;     
+      flex   : ;
+       
 `;

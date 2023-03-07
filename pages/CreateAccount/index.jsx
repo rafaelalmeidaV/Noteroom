@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "react-native-paper";
 import SuperButton from "../../components/Button";
 import Database, { User } from "../../services/database/user";
+import { StatusBar } from 'expo-status-bar';
 
 
 
 export default function CreateAccount({ navigation }) {
+    <StatusBar style="#60169A"/>
     const [name, onChangename] = useState('');
     const [telefone, onChangetelefone] = useState('');
     const [email, onChangeemail] = useState('');
@@ -18,8 +20,6 @@ export default function CreateAccount({ navigation }) {
     const [checked3, setChecked3] = useState(false);
 
     const db = new Database();
-
-
 
     async function createUser() {
         console.log("Cadastrando usuário")

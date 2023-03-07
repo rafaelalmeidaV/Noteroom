@@ -6,10 +6,13 @@ import { useState } from "react";
 import CreateAccount from "../CreateAccount";
 import { Checkbox } from "react-native-paper";
 import axios from 'axios';
+import { StatusBar } from 'expo-status-bar';
 
 
 
 export default function SignIn({ navigation }) {
+
+    <StatusBar style="#60169A" />
 
     function handleNavigationCreateAccount() {
         navigation.navigate('CreateAccount')
@@ -28,7 +31,7 @@ export default function SignIn({ navigation }) {
 
     async function handleSignIn() {
         const url = "https://note-room-default-rtdb.firebaseio.com/users.json";
-        // faz uma requisição GET para a rota do Firebase Realtime Database
+        
         try {
 
             const response = await axios.get(`${url}`)
@@ -46,6 +49,7 @@ export default function SignIn({ navigation }) {
                 handleNavigationHome()
             } else {
                 console.log("Credenciais inválidas.");
+                Alert.alert("Credenciais inválidas.");
             }
         } catch (error) {
             console.error(error);
@@ -119,6 +123,6 @@ export default function SignIn({ navigation }) {
         </Container>
     )
 
-
+    
 }
 
