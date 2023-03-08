@@ -2,17 +2,13 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     width: 100%;
-    height: 100%;
-    /* align-items: center; */
-    
+    height: 100%;    
     background-color: #60169A;    
 `;
 
 
 export const Wrapper = styled.View`  
-    align-items: center;
-    width: 100%;    
-    
+    align-items: center;    
     background-color: white;    
     border-top-left-radius: 20px ;
     border-top-right-radius: 20px ;
@@ -26,11 +22,23 @@ export const WrapperYear = styled.View`
     background-color: #450882 ;
     width: 100%;
     height: 9%;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 `;
 
 
-export const Textdata = styled.Text`
-      text-align: center;
+export const Textdata = styled.Text`      
+      color: white;
+      font-size: 18px;
+      
+`;
+export const ContainerSubjects = styled.Text`      
+      
+      background-color: blue;
+
+      
 `;
 
