@@ -8,12 +8,13 @@ export const Container = styled.View`
 
 
 export const Wrapper = styled.View`  
-    align-items: center;    
+     
     background-color: white;    
     border-top-left-radius: 20px ;
     border-top-right-radius: 20px ;
     justify-content: flex-end;  
     width: 100%;
+    padding-top: 10%;
 `;
 export const WrapperYear = styled.View`  
     border-top-left-radius: 20px ;
@@ -35,10 +36,18 @@ export const Textdata = styled.Text`
       font-size: 18px;
       
 `;
-export const ContainerSubjects = styled.Text`      
-      
-      background-color: blue;
 
+export const ContainerSubjects = styled.View`      
+      align-items: center;
+      background-color: #60169A;
+      border-radius: 20px;
+      width: 80%; 
+      
+      
+`;
+export const TextSubjects = styled.Text`      
+      text-align: center;
+      
       
 `;
 

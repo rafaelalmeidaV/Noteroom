@@ -1,5 +1,5 @@
 import { View, Text, FlatList } from "react-native";
-import { Container, Wrapper, WrapperYear, Bar, Textdata, ContainerSubjects } from "./style";
+import { Container, Wrapper, WrapperYear, Bar, Textdata, ContainerSubjects, TextSubjects } from "./style";
 
 const data = {
     year: "9° ANO",
@@ -36,8 +36,8 @@ export default function Book({ navigation }) {
                     keyExtractor={item => item.name}
                     renderItem={({ item }) => (
                         <ContainerSubjects>
-                            <Text>{item.numberoflessons} </Text>
-                            <Text>{item.name}</Text>                            
+                            <TextSubjects>{item.numberoflessons} </TextSubjects>
+                            <TextSubjects>{item.name}</TextSubjects>                            
                         </ContainerSubjects>
                     )}
                 />
