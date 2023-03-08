@@ -77,7 +77,7 @@ export const TextTitle = styled.Text`
       color: #60169A;
       font-size: 16px;  
       font-weight: bold;  
-      margin-top : 10% ;
+      margin-top : 6% ;
            
       padding-right: 5%; 
 `;
@@ -89,7 +89,7 @@ export const ImgIcon = styled.View`
 export const TextContent = styled.Text`      
       color: gray;
       font-size: 13px; 
-       
+      margin-right: 50%;
 `;
 export const Wrapper2 = styled.View`      
       

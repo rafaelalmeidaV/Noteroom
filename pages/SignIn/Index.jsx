@@ -2,7 +2,7 @@ import { Text, Button, View, TextInput, SafeAreaView, Alert } from "react-native
 import { NavigationAction } from "@react-navigation/native";
 import { Noteroom, StyledButton, Wrapper, ButtonWrapper, Container, TextTitle, Emailzone, ButtonContainer, CheckBoxContainer, TextCheck, TextEsqueci, TextNewAccount, TextCadastra, Containerbar1, Containerball, Containerbar2, ContainerOU, Textball, WrapperTxt, StyledTextInput } from "./styles";
 import SuperButton from "../../components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateAccount from "../CreateAccount";
 import { Checkbox } from "react-native-paper";
 import axios from 'axios';
@@ -26,12 +26,17 @@ export default function SignIn({ navigation }) {
 
     const [checked, setChecked] = useState(false);
 
+    useEffect(() => {
+        navigation.navigate('Home')
+    }, []);
+
+
 
     // define o URL da rota do Firebase Realtime Database
 
     async function handleSignIn() {
         const url = "https://note-room-default-rtdb.firebaseio.com/users.json";
-        
+
         try {
 
             const response = await axios.get(`${url}`)
@@ -123,6 +128,6 @@ export default function SignIn({ navigation }) {
         </Container>
     )
 
-    
+
 }
 
