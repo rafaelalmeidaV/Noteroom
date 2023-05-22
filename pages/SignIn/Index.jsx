@@ -26,9 +26,9 @@ export default function SignIn({ navigation }) {
 
     const [checked, setChecked] = useState(false);
 
-    // useEffect(() => {
-    //     navigation.navigate('Home')
-    // }, []);
+    useEffect(() => {
+        navigation.navigate('Home')
+    }, []);
 
 
 

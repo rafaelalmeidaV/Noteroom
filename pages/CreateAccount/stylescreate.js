@@ -1,8 +1,11 @@
 import styled from "styled-components/native";
+import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
 
 
 export const Container = styled.View`
     background-color: #60169A;
+    padding-top: ${Constants.statusBarHeight}px;
     
 `;
 
@@ -64,7 +67,7 @@ export const TextEntrar = styled.Text`
    font-weight: bold;   
 `;
 export const Noteroom = styled.Text`
-      margin-top: 20%;
+      
       color: white;
       font-size: 24px;
       text-align: center;
