@@ -35,22 +35,21 @@ export default function Book({ navigation }) {
                 <Textdata>{data.year}: {data.turma}</Textdata>
             </WrapperYear>
             <Wrapper >
-                <Touchable onPress={handleNavigationBookSubjects}>
+                
                 <FlatList
                     data={data.subjects}
                     keyExtractor={item => item.name}
                     renderItem={({ item }) => (
 
-                        <ContainerSubjects >
+                        <ContainerSubjects onPress={handleNavigationBookSubjects}>
                             <NumberofLessons>{item.numberoflessons} </NumberofLessons>
                             <TextSubjects>                                
                                 {item.name}
-                            </TextSubjects>
-                                                      
+                            </TextSubjects>                                                      
                         </ContainerSubjects>
                     )}
                 />
-                </Touchable>
+                
                 <Bar></Bar>
             </Wrapper>
         </Container>

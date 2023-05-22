@@ -6,6 +6,7 @@ import Home from "./pages/Home/index";
 import Book from './pages/Book/index';
 import { Text } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
+import BookSubjects from './pages/BookSubjects';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
           <Stack.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false }} />
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <Stack.Screen name="Book" component={Book} options={{ headerShown: false }} />
+          <Stack.Screen name="BookSubjects" component={BookSubjects} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

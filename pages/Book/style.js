@@ -55,7 +55,7 @@ export const Textdata = styled.Text`
       
 `;
 
-export const ContainerSubjects = styled.View`      
+export const ContainerSubjects = styled.TouchableOpacity`
       
       flex-direction: row;
       align-items: center;
@@ -94,6 +94,3 @@ export const NumberofLessons = styled.Text`
 
 `;
 
-export const Touchable = styled.TouchableOpacity`
-      
-`;
