@@ -1,5 +1,5 @@
 import { View, Text, FlatList } from "react-native";
-import { Container, Wrapper,Touchable, WrapperYear,NumberofLessons, Textdata,Bar, ContainerSubjects, TextSubjects, Noteroom } from "./style";
+import { Container, Wrapper, Touchable, WrapperYear, NumberofLessons, Textdata, Bar, ContainerSubjects, TextSubjects, Noteroom } from "./style";
 
 const data = {
     year: "9° ANO",
@@ -24,18 +24,23 @@ const data = {
 
 
 export default function Book({ navigation }) {
+
     function handleNavigationBookSubjects() {
-        navigation.navigate('BookSubjects')
+        try {
+            navigation.navigate('BookSubjects')
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
         <Container>
-             <Noteroom>NOTEROOM</Noteroom>
+            <Noteroom>NOTEROOM</Noteroom>
             <WrapperYear>
                 <Textdata>{data.year}: {data.turma}</Textdata>
             </WrapperYear>
             <Wrapper >
-                
+
                 <FlatList
                     data={data.subjects}
                     keyExtractor={item => item.name}
@@ -43,13 +48,13 @@ export default function Book({ navigation }) {
 
                         <ContainerSubjects onPress={handleNavigationBookSubjects}>
                             <NumberofLessons>{item.numberoflessons} </NumberofLessons>
-                            <TextSubjects>                                
+                            <TextSubjects>
                                 {item.name}
-                            </TextSubjects>                                                      
+                            </TextSubjects>
                         </ContainerSubjects>
                     )}
                 />
-                
+
                 <Bar></Bar>
             </Wrapper>
         </Container>

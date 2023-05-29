@@ -20,6 +20,8 @@
     "react-native-check-box": "^2.1.7",
     "react-native-local-mongodb": "^4.0.0",
     "react-native-paper": "^5.1.4",
+    "react-native-pell-rich-editor": "^1.9.0",
+    "react-native-richtext-editor": "^0.1.14",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
     "styled-components": "^5.3.6"
